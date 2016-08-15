@@ -1,0 +1,45 @@
+{
+	"name" : "icircle/build-ux",
+	"description" : "Build scripts for UX Packages from icircle",
+	"type" : "composer-plugin",
+	"homepage" : "http://icircle.xyz/developer/build-ux",
+	"license" : "icircle",
+	"minimum-stability" : "dev",
+	"authors" : [{
+			"name" : "Raghavendra K R",
+			"email" : "raghavendra@icircle.co.in",
+			"homepage" : "http://krraghavendra.in",
+			"role" : "Developer"
+		}
+	],
+	"keywords" : [
+		"build",
+		"ux",
+		"icircle"
+	],
+	"repositories" : [{
+			"type" : "composer",
+			"url" : "http://packages.icircle.xyz/php"
+		}
+	],
+	"require" : {
+		"composer/composer" : "1.2.0",
+		"jms/composer-deps-analyzer" : "0.1.0",
+		"mouf/nodejs-installer" : "1.0.10"
+	},
+	"extra" : {
+		"mouf" : {
+			"nodejs" : {
+				"version" : "~0.12",
+				"targetDir" : "vendor/nodejs/nodejs",
+				"forceLocal" : false
+			}
+		}
+	},
+	"autoload" : {
+		"psr-4" : {
+			"icircle\\" : "src"
+		}
+	},
+	"bin" : ["bin/buildux"]
+}
